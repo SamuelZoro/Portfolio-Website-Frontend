@@ -1,15 +1,71 @@
 <!--contact me form-->
 <div id="form-container">
-    <form id="contactForm">
-      <div id="detailsTitle">
-        <p id="formDetails">sam@luciusramirez.com </p>
-    <p id="formTitle">
-      Get in contact with me
-    </p>
-      </div>
-      <input id="nameInput" class="fields" type="text" size="40" name="name" placeholder="Name"><br>
-      <input id="emailInput" class="fields" type="text" name="email" placeholder="Your Email Address"><br>
-      <textarea class="fields" name="message" placeholder="Message"></textarea><br>
-      <button type="submit" name="submit">Send Message</button>
-</form>
-  </div>
+  <form class="contactF" id="contactForm">
+    <div id="detailsTitle">
+      <p id="formDetails">sam@luciusramirez.com </p>
+      <p id="formTitle">
+        Get in contact with me
+      </p>
+    </div>
+    <input id="nameInput" class="fields" type="text" size="40" name="name" placeholder="Name"><br>
+    <input id="emailInput" class="fields" type="text" name="email" placeholder="Your Email Address"><br>
+    <input id="subjectInput" class="fields" type="text" name="subject" placeholder="Enter Subject"><br>
+    <textarea id="messageInput" class="fields" name="message" placeholder="Message"></textarea><br>
+    <button type="submit" name="submit">Send Message</button>
+  </form>
+</div>
+
+<script>
+  $(document).ready(function () {
+    const contactForm = document.querySelector('.contactF');
+    let name = document.getElementById('nameInput');
+    let email = document.getElementById('emailInput');
+    let subject = document.getElementById('subjectInput');
+    let message = document.getElementById('messageInput');
+
+    let container = document.getElementById('form-container');
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let formData = {
+        name: name.value,
+        email: email.value,
+        subject: subject.value,
+        message: message.value
+      }
+      //
+      let xhr = new XMLHttpRequest();
+      //post method to backend to root directory
+      xhr.open('POST', 'https://api.luciusramirez.com/');
+      //sending data via JSON format
+      xhr.setRequestHeader('content-type', 'application/json')
+      //feedback response from backend/server
+      xhr.onload = function () {
+        console.log(xhr.responseText);
+        if (xhr.responseText == 'success') {
+          $(".contactF").hide();
+          $("#form-container").addClass("formResponse");
+          document.getElementsByClassName("formResponse")[0].textContent = "Email sent";
+          $(".formResponse").html('<p class="formResponse">Email sent</p> <br> <i class="fa-regular fa-circle-check"></i>');
+          //this clears the text fields
+          name.value = '';
+          email.value = '';
+          subject.value = '';
+          message.value = '';
+        } else {
+          let errorContainer = document.createElement("div");
+          let errorResponse = document.createTextNode("Something went wrong. Try again.");
+          errorContainer.style.color = "rgb(255 0 0 / 48%)";
+          errorContainer.style.fontFamily = "arial";
+          errorContainer.style.marginBottom = "1.5rem";
+          errorContainer.style.fontWeight = "bold";
+          errorContainer.appendChild(errorResponse);
+          document.getElementById("detailsTitle").appendChild(errorContainer);
+        }
+
+      }
+      //send formData in a string format
+      xhr.send(JSON.stringify(formData));
+    })
+  });
+</script>

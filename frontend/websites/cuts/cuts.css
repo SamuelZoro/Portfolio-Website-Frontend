@@ -1,0 +1,351 @@
+@font-face {
+    font-family: mainFont;
+    src: url(fonts/Monaco.ttf);
+}
+  
+  /*body properties*/
+  body {
+    margin: 0;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    font-family: mainFont;
+    overflow-y: auto;
+  }
+
+  /*to make using rem unit easier */
+  html {
+    font-size: 62.5%;
+    margin: 0;
+    height: 100%;
+    overflow-y: auto;
+  }
+
+#wholePageContainer {
+    height:inherit;
+}
+
+#mainSectionFlexContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#navBarFlexContainer {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        margin-top: .5rem;
+        padding-left: 1.5rem;
+        padding-right: 2rem;
+        border-bottom: thin dashed rgba(255, 255, 255, 0.216);
+        color: white;
+}
+
+
+#hambarber {
+    height:33px;
+    width: 29px;
+}
+
+#logo {
+    width: 99px;
+    height:30px;
+}
+
+#logoContainer {
+
+    padding-right:1rem;
+}
+
+.fa-solid {
+    color: white;
+}
+
+.navText {
+    margin-top:0rem;
+    display:none;
+}
+
+.dropdownText {
+    margin-top:0rem;
+}
+
+#dropdown {
+    cursor:pointer;
+
+    margin-left: 2rem;
+}
+
+#dropdownContainer {
+
+    margin-left:2rem;
+}
+
+#dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    margin-top: 2rem;
+}
+
+#topFlexContainer {
+
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    display: flex;
+    justify-content: center;
+    color: white;
+    height: auto;
+
+    
+}
+ul{
+    padding-inline-start: 0;
+    
+}
+li {
+    list-style: none;
+}
+
+#listItem1 {
+    text-indent: -6rem;
+}
+
+#listItem3 {
+    text-indent: 6rem;
+}
+
+#homeHeading {
+    padding-left:2rem;
+    padding-right:2rem;
+    margin:0;
+    border-left: thin dashed rgba(255, 255, 255, 0.216);
+    border-right: thin dashed rgba(255, 255, 255, 0.216);
+    width:60%;
+   display: flex;
+   justify-content: center;
+}
+
+main {
+    overflow-y: auto;
+
+    padding-left: 0;
+}
+
+#hairstyle1 {
+width:100%;
+}
+#hairstyle2 {
+    width:100%;
+}
+#hairstyle3 {
+    width:100%;
+}
+
+#hairstyle4 {
+    width:100%;
+    
+}
+
+#hairstyle5 {
+    width:100%;
+    display: none;
+}
+
+#hairstyle6 {
+    width:100%;
+    display: none;
+    
+}
+
+.hairstyles {
+    width:90%;
+    height:90%;
+    margin: 1rem;
+}
+
+.hairstylesHidden {
+    margin-bottom:1;
+    width:100%;
+}
+
+#imgContainer {
+    padding-left:2rem;
+    padding-right:2rem;
+    padding-top:1rem;
+    padding-bottom:1rem;
+    border-left: thin dashed rgba(255, 255, 255, 0.216);
+    border-right: thin dashed rgba(255, 255, 255, 0.216);
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-content: space-evenly;
+    align-items: center;
+    width:60%;
+    column-gap: 2rem;
+}
+
+#midFlexContainer {
+    border-top: thin dashed rgba(255, 255, 255, 0.216);
+    border-bottom: thin dashed rgba(255, 255, 255, 0.216);
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    color: white;
+    height: auto;
+    width: auto;
+}
+
+#leftBox {
+height:50%;
+margin-top:auto;
+margin-bottom:auto;
+
+margin-left:3rem;
+
+}
+
+#rightBox {
+    height:50%;
+    margin-top:auto;
+    margin-bottom:auto;
+    
+    margin-right:3rem;
+
+    
+}
+
+#footerFlexContainer {
+    margin-top: 1rem;
+    margin-bottom: 0rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-evenly;
+
+
+
+    color: white;
+    width: auto;
+}
+
+#footerFlexContainer2 {
+    color:white;
+    padding-left: 2rem;
+    padding-right:2rem;
+}
+
+#insta {
+    height: 25px;
+    width: 25px;
+
+}
+
+#fb {
+    height: 25px;
+    width: 25px;
+}
+
+/*book online page */
+#calender {
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width:100%;
+    padding:2rem;
+}
+
+
+@media screen and (min-width:767px) and (min-height:700px) {
+    
+.hairstyles {
+    width:70%;
+    }
+
+    #footerFlexContainer {
+        grid-template-columns: auto auto auto;
+        justify-content: space-evenly;
+        justify-items: center;
+        align-content: space-evenly;
+
+
+    }
+
+    }
+
+@media screen and (min-width:1023px) and (min-height:599px) {
+    #navBarFlexContainer {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        margin-top: 1.5rem;
+        padding-left: 1.5rem;
+        padding-right: 5rem;
+        border-bottom: thin dashed rgba(255, 255, 255, 0.216);
+        color: white;
+    }
+
+
+
+    #dropdownContainer {
+        display:none;
+
+    }
+
+    .navText {
+        margin-top:1.2rem;
+        display:block;
+    }
+
+    #homeHeading {
+        width:50%;
+    }
+
+    #imgContainer {
+        width:50%;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        column-gap: 5rem;
+    }
+    .hairstyles {
+        width:90%;
+        margin-top: 5rem;
+        padding-left:0rem;
+        padding-right:0rem;
+        padding-top:0rem;
+        }
+
+        .hairstylesHidden {
+            width:90%;
+        margin-top: 5rem;
+        padding-left:0rem;
+        padding-right:0rem;
+        padding-top:0rem;
+        }
+
+     #hairstyle4 {
+        display:block;
+        margin-bottom: 5rem;
+     } 
+     
+     #hairstyle5 {
+        display:block;
+        margin-bottom: 5rem;
+     }   
+
+     #hairstyle6 {
+        display:block;
+        margin-bottom: 5rem;
+     }   
+
+}

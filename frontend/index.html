@@ -5,150 +5,66 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="theme-color" content="#000000">
-  <meta name="description" content="">
+  <meta name="description" content="Web developer in Leeds, UK">
 
   <link rel="stylesheet" href="css.css">
   <script src="https://kit.fontawesome.com/bcec439864.js" crossorigin="anonymous"></script>
   <script src="jquery.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+  <script src="app.js"></script>
+  <script src="about.js"></script>
+  <script src="typed.js"></script>
+  <link rel="icon" href="favicon.ico">
+
   <title>Lucius Ramirez</title>
-
-  <script>
-    var typed;
-    //function to toggle between opening and closing the dropdown when clicking on the dropdown element
-    $(document).ready(function () {
-
-      //function to set timer on when animation begins
-      const myTimeout = setTimeout(startAnimation, 900);
-
-      function startAnimation() {
-        //code to create typing animation effect
-        typed = new Typed('#typed', {
-          strings: ['UK based web developer.', 'custom-built websites.', "highly scalable, and accessible."],
-          typeSpeed: 40,
-          backSpeed: 40,
-          loop: true,
-
-        });
-      }
-
-    });
-  </script>
 </head>
 
 <body>
   <div id="theBody">
-    <!-- Header-->
-    <ul class="flex-container two">
-      <li>
-        <a href="index.html">
-          <img src="Photos/Logo.png" alt="Lucius Ramirez Logo" id="logo">
-        </a>
-      </li>
-      <il>
-        <h1 id="pageTitle"></h1>
-      </il>
-      <!--text animation on homepage-->
-    </ul>
-    <ul class="flex-container typed" id="homeText">
-      <li class="typed-item">
 
-        <span id="typed"></span>
-      </li>
 
-    </ul>
+
     <!--Main section-->
-    <main id="mainSection">
+    <main id="mainContainer">
+      <!-- Header-->
+      <ul class="flex-container two">
+        <li>
+          <a href="luciusramirez.com">
+            <img src="Logo.png" alt="Lucius Ramirez Logo" id="logo">
+          </a>
+        </li>
+        <il>
+          <h1 id="pageTitle"></h1>
+        </il>
+      </ul>
+      <div id="mainSection">
+        <!--navigation bar-->
+        <ul class="flex-container three">
+          <li id="home">
+            <i class="fa-solid fa-house fa-3x" style="color:white;"></i>
+            <p class="iconText">home</p>
+          </li>
+          <li id="portfolio">
+            <i class="fa-solid fa-folder fa-3x" style="color:white;"></i>
+            <p class="iconText">portfolio</p>
+          </li>
+          <li id="about">
+            <i class="fa-solid fa-user fa-3x" style="color:white;"></i>
+            <p class="iconText">about</p>
+          </li>
+          <li id="contact">
+            <i class="fa-solid fa-comments fa-3x" style="color:white;"></i>
+            <p class="iconText">contact</p>
+          </li>
+        </ul>
+        <div id="centering-container">
+
+        </div>
+      </div>
     </main>
   </div>
-  </div>
-  <!--navigation bar-->
-  <hr class="theNav">
-  <ul class="flex-container three">
-    <li id="home">
-      <i class="fa-solid fa-house fa-3x" style="color:white;"></i>
-      <p class="iconText">home</p>
-    </li>
-    <li id="portfolio">
-      <i class="fa-solid fa-folder fa-3x" style="color:white;"></i>
-      <p class="iconText">portfolio</p>
-    </li>
-    <li id="about">
-      <i class="fa-solid fa-user fa-3x" style="color:white;"></i>
-      <p class="iconText">about</p>
-    </li>
-    <li id="contact">
-      <i class="fa-solid fa-comments fa-3x" style="color:white;"></i>
-      <p class="iconText">contact</p>
-    </li>
-  </ul>
-  </div>
+
 </body>
 
 </html>
-<script>
-  //javascript object with attributes representing the page title
-  const page = {
-    home: "h o m e",
-    portfolio: "p o r t f o l i o",
-    aboutMe: "a b o u t",
-    contactMe: "c o n t a c t"
-  }
-  //retrieves the element which will output text for page title and insert the JS value
-  document.getElementById("pageTitle").innerHTML = `${page.home}`;
-  //when doc loads the home page is marked as active
-  $("#home").addClass("activePage");
-  //when clicking on the portfolio icon
-  $("#portfolio").click(function () {
-    $("#portfolio").addClass("activePage");
-    $("#home").removeClass("activePage");
-    $("#about").removeClass("activePage");
-    $("#contact").removeClass("activePage");
-    document.getElementById("pageTitle").innerHTML = `${page.portfolio}`; //change page title
-    $("#theBody").addClass("blurContainer"); // blur background
-    $("#mainSection").empty(); //main section's content is emptied and swapped with the portfolio content
-    $("#homeText").hide(); //home page animation is hidden
-    $("#mainSection").load("portfolio.html"); //content from file is loaded onto this page
-
-  });
-  //when clicking on the home icon
-  $("#home").click(function () {
-    $("#home").addClass("activePage");
-    $("#portfolio").removeClass("activePage");
-    $("#about").removeClass("activePage");
-    $("#contact").removeClass("activePage");
-    document.getElementById("pageTitle").innerHTML = `${page.home}`;
-    $("#theBody").removeClass("blurContainer");
-    $("#mainSection").empty();
-    $("#homeText").show();
-
-  });
-  //when clicking on the about icon
-  $("#about").click(function () {
-    $("#about").addClass("activePage");
-    $("#portfolio").removeClass("activePage");
-    $("#home").removeClass("activePage");
-    $("#contact").removeClass("activePage");
-    document.getElementById("pageTitle").innerHTML = `${page.aboutMe}`;
-    $("#theBody").addClass("blurContainer");
-
-    $("#mainSection").load("about.html");
-    $("#mainSection").empty();
-    $("#homeText").hide();
-  });
-  //when clicking on the contact icon
-  $("#contact").click(function () {
-    $("#contact").addClass("activePage");
-    $("#portfolio").removeClass("activePage");
-    $("#about").removeClass("activePage");
-    $("#home").removeClass("activePage");
-    document.getElementById("pageTitle").innerHTML = `${page.contactMe}`;
-    $("#theBody").addClass("blurContainer");
-
-    $("#mainSection").empty();
-    $("#homeText").hide();
-    $("#mainSection").load("contact.html");
-
-  });
-
-</script>
