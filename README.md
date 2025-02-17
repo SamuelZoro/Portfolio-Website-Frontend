@@ -1,2 +1,2 @@
 # Portfolio project
-Visit website https://www.luciusramirez.com/ to view web application.
+Visit website https://www.samuelzoro.com/ to view web application.
